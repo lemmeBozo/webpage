@@ -2,14 +2,9 @@
     color: rgb(132, 60, 226)
 }
 
-main {
-    padding: 10px;
-    border: 1px solid green;
-}
 
 .projects {
     padding: 10px;
-    border: 1px solid blue;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 800px);
@@ -18,12 +13,26 @@ main {
     gap: 10px;
 }
 
+.projects a {
+    margin-right: 30px;
+}
+
+.projects a:hover {
+    color: #858080;
+    transition: 0.3s;
+}
+
 .card {
-    border: 1px solid red;
+
     padding: 10px;
     height: 100%;
 }
 
-footer {
-    border: 1px solid green;
+.card h1, p {
+    margin-bottom: 10px;
 }
+
+span {
+    color: #858080;
+}
+
