@@ -1,0 +1,39 @@
+.intro {
+    padding: 10px;
+    width: 700px;
+}
+
+.intro p {
+    font-size: 18px;
+}
+
+.icons {
+    margin-top: 20px;
+    height: 80%;
+}
+
+.bx {
+    font-size: 35px;
+    color: rgb(104, 102, 102);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.intro h1 {
+    margin-bottom: 20px;
+    background: #8F27FF;
+    background: linear-gradient(to left, #8F27FF 0%, #2BA0FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.current-page {
+    color: rgb(132, 60, 226)
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

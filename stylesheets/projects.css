@@ -1,0 +1,29 @@
+.current-page {
+    color: rgb(132, 60, 226)
+}
+
+main {
+    padding: 10px;
+    border: 1px solid green;
+}
+
+.projects {
+    padding: 10px;
+    border: 1px solid blue;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 800px);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card {
+    border: 1px solid red;
+    padding: 10px;
+    height: 100%;
+}
+
+footer {
+    border: 1px solid green;
+}
