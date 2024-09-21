@@ -7,10 +7,11 @@
     padding: 10px;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 800px);
+    grid-template-columns: repeat(2, minmax(0, 800px));
+
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .projects a {
