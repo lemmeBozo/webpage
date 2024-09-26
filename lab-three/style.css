@@ -1,0 +1,51 @@
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome */
+    background: url(images/spacebackground.jpg);
+    background-size: cover;
+
+}
+
+
+
+/* the above is used to get rid of blue hightlighting over img */
+
+
+.img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.img-container, img {
+    height: 200px;
+    width: 200px;
+}
+
+.cursor-position {
+    position: absolute;
+}
+
+img {
+    pointer-events: none;
+}
+
+@keyframes disapear {
+    0% {
+        height: 200px;
+        width: 200px;
+        transform: scale(1);
+    }
+    100% {
+        height: 0px;
+        width: 0px;
+        transform: scale(0);
+    }
+}
+
+
+.remove {
+    animation: disapear 1s;
+}

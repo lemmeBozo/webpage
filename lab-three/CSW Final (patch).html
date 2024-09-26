@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        .c {
+            border: 5px solid blue;
+            background: white;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            color: white;
+            margin: 5px;
+        }
+
+        .container {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <canvas class="c" width = '500' height = '350'></canvas>
+    </div>
+    <div class="container">
+        <p class = "score">Score: </p>
+        <p class="high-score">High Score:</p>
+    </div>
+   
+    <script>
+        let c = document.querySelector('.c');
+        let ctx = c.getContext('2d');
+
+        // game variables
+        let score = 0;
+        let highScore = 0;
+
+        let scoreElement = document.querySelector(".score");
+        let highScoreElement = document.querySelector(".high-score");
+
+        // circle variables
+        let radius = 20;
+        let x = 250;
+        let y = 100;
+
+
+        // movement interval variables for circle
+        let dy = 2;
+        let dx = 2;
+
+        // paddle variables
+        let height = 10;
+        let width = 85;
+        let xPad = 200;
+        let rightPressed = false;
+        let leftPressed = false;
+
+        // reset the canvas back to it's original state
+        function reset() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, c.width, c.height);
+        }
+
+        // draws circle
+        function drawCircle(x, y, radius) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI*2);
+            ctx.fillStyle = "green";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // draws paddle
+        function drawPaddle(xPad) {
+            ctx.beginPath();
+            ctx.fillStyle = "black";
+            ctx.fillRect(xPad, c.height - 10, width, height);
+        } 
+
+
+
+        function wallCollision() {
+            if(x > c.width - radius || x < radius) {
+                dx = -dx;
+            }
+            
+            else if(y <  radius) {
+                dy = -dy;
+            }
+        
+        }
+
+        function paddleCollision() {
+            if (y + dy < radius) {
+                dy = -dy;
+            }
+            else if (y + dy > c.height - radius) {
+                if (x > xPad && x < xPad + width) {
+                    dy = -dy;
+                    score += 1;
+                }
+            }
+        }
+
+        function gameOver() {
+            if (y > c.height - radius) {
+                clearInterval(begin);
+                alert("game over");
+                x = 250;
+                y = 100;
+                dx = 2;
+                dy = 2;
+                xPad = 200;
+                rightPressed = false;
+                leftPressed = false;
+                if (score > highScore) {
+                    highScore = score;
+                    console.log("this is true")
+                }
+                score = 0;
+                begin = setInterval(function() {gameStart()}, 10);
+
+            }
+        }
+
+        // function thtat displays score and high score
+        function checkScore() {
+            scoreElement.innerText = "Score: " + score;
+            highScoreElement.innerText = "High Score: " + highScore;
+        }
+
+
+
+        function gameStart() {
+            reset();
+            paddleCollision()
+            wallCollision();
+            checkIf();
+            drawCircle(x += dx, y += dy, 20);
+            drawPaddle(xPad);
+            checkScore();
+            gameOver();
+        }
+
+        let begin = setInterval(function() {gameStart()}, 10);
+
+
+        // key down function
+        function keyDown(e) {
+            switch (true) {
+                case e.key == "ArrowRight": 
+                    rightPressed = true;
+                        break;
+                case e.key == "ArrowLeft":
+
+                    leftPressed = true;
+                        break
+            } 
+        }
+
+        // key up function
+        function keyUp(e) {
+            switch (true) {
+                case e.key == "ArrowRight":
+                    rightPressed = false;
+                        break;
+                case e.key == "ArrowLeft":
+                    leftPressed = false;
+                        break;
+            }
+        }
+
+        // event listener for paddle movement
+        document.body.addEventListener('keydown', keyDown);
+        document.body.addEventListener('keyup', keyUp);
+
+
+        // function that will execute depending on whether the right or left variable is true
+        function checkIf() {
+            if (rightPressed == true) {
+                xPad += 10;
+                if (xPad + width > c.width){
+                    xPad = c.width - width;
+                }
+            }
+            else if (leftPressed == true) {
+                xPad -= 10;
+                if (xPad < 0) {
+                    xPad = 0;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
