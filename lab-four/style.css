@@ -118,7 +118,7 @@ header > h2 {
 .img-container > img{
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 9 / 17;
+    aspect-ratio: 9 / 16;
 }
 
 .snap {
@@ -131,7 +131,6 @@ header > h2 {
 }
 
 .social {
-
     margin-top: 10px;
     display: flex;
     gap: 10px;
