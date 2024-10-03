@@ -97,7 +97,7 @@ header {
 
 
 main {
-    height: 89%;
+    height: 88%;
 }
 
 .gallery {
@@ -109,6 +109,7 @@ main {
     overscroll-behavior: contain;
 
     gap: 10px; /* Adds a gap between each image */
+    overflow-y: hidden;
 }
 
 .media-element {
@@ -119,7 +120,7 @@ main {
     height: 100%;
     width: 100%;
     object-fit: cover;
-
+    aspect-ratio: 9 / 16;
 }
 
 
