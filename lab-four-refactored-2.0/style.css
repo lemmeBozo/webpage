@@ -15,9 +15,10 @@ body {
     overflow-x: hidden;
 }
 
-/* Gallery Section */
+/* Gallery Section */ /* NOTE This section will be deleted when js in enabled js will handle styled elemnets */
 .gallery {
     display: grid;
+    align-items: center;
     grid-auto-flow: column; /* Layout images in a column */
     overflow-x: auto; /* Horizontal scrolling inside the gallery */
     overscroll-behavior: contain; /* Prevents scrolling beyond container */
@@ -28,7 +29,7 @@ body {
 }
 
 .media-element {
-    width: 350px;
+    width: 325px;
 }
 
 .media-element img {
@@ -63,6 +64,7 @@ body {
 }
 
 .user-text {
+    margin-top: 5px;
     display: flex;
     gap: 15px;
 }
@@ -72,6 +74,7 @@ body {
 }
 
 .date {
+    margin-top: 5px;
     color: #A8A8A8;
     font-size: 13px;
 }
@@ -144,7 +147,7 @@ header {
 
 /* Navigation Section */
 nav {
-    /* Optional border for debugging */
+    margin-top: 10px;
 }
 
 nav ul {
