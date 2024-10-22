@@ -72,6 +72,35 @@ button {
 
 
 /* Non JavaScript Styles BEGIN */
+.gallery {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column; /* Layout images in a column */
+    overflow-x: auto; /* Horizontal scrolling inside the gallery */
+    overscroll-behavior: contain; /* Prevents scrolling beyond container */
+    overflow-y: hidden; /* Hide vertical overflow */
+    margin-inline: auto;
+    width: 350px;
+    gap: 10px;
+}
 
+.media-element {
+    width: 325px;
+}
+
+.media-element img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+}
+
+/* Scroll Snap Behavior */
+.snap {
+    scroll-snap-type: inline mandatory;
+}
+
+.snap > * { /* All children of snap */
+    scroll-snap-align: start;
+}
 
 /* Non JavaScript Styles END */
