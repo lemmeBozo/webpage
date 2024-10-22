@@ -1,8 +1,18 @@
 // Checks if javascript has loaded
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Javascript has successfully loaded!");
+
+    // When the dom has loaded (also means js has loaded) then
+    const gallery = document.querySelector(".gallery");
+    gallery.style.display = "none";
+
+
     // First create the carousel
     createCarousel();
+    
+    // Select carousel container and set display to block
+    const carousel = document.querySelector(".carousel");
+    carousel.style.display = "block"
 
     // Upon creating the carousel add the js for the interactible carousel
     const carouselImages = document.querySelector(".carousel-images");
