@@ -1,0 +1,77 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* JavaScript Styles BEGIN */
+
+.carousel {
+    display: none;
+}
+
+
+.carousel {
+    width: 100%;
+    overflow: hidden; /* Hide overflow to show only one image at a time */
+    position: relative;
+}
+
+.carousel-images {
+    display: flex; /* Use flexbox for horizontal layout */
+    transition: transform 0.5s ease; /* Smooth transition */
+    height: 500px;
+}
+
+.carousel-images img {
+    width: 100%; /* Each image takes full width of the carousel */
+    flex: 0 0 100%; /* Prevent flex items from growing or shrinking */
+    object-fit: contain;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 50px;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+}
+
+
+/* Styles for carousel indicators */
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.carousel_indicator {
+    border-radius: 50%;
+    border: 0;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+.carousel_indicator:hover {
+    background: rgba(0,0,0,.55)
+}
+
+.carousel_indicator.current-slide {
+    background: rgba(0,0,0,.7);
+}
+
+/* JavaScript Styles END */
+
+
+
+/* Non JavaScript Styles BEGIN */
+
+
+/* Non JavaScript Styles END */
