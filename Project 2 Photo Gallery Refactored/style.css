@@ -295,6 +295,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
+    touch-action: pan-y;
 }
 
 .track {
