@@ -166,10 +166,10 @@ class Carousel {
         this.track.addEventListener("touchstart", (e) => {
             this.stopAutoPlay(); // upon user interaction stop autoplay
             this.startX = e.touches[0].clientX; // updates where the user started touching
-        });
+        },{ passive: false });
         this.track.addEventListener("touchmove", (e) => {
             this.currentX = e.touches[0].clientX; // update the current touch position
-        });
+        },{ passive: false });
         this.track.addEventListener("touchend", () => {
             const diffX = this.startX - this.currentX;
             if (Math.abs(diffX) > 50) { // if minimum swipe threshold is reached then move (50px)
@@ -182,7 +182,7 @@ class Carousel {
                 }
                 this.updateCarousel();
             }
-        });
+        },{ passive: false });
     } 
 }
 
