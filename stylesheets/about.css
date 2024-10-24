@@ -1,25 +1,27 @@
+/* index.html (about page) specificy styling */
+
+/* Styling Variables BEGIN */
+ :root {
+    --intro-div-margin-top: 5rem;
+    --icon-size: 45px;
+}
+
+/* Styling Variables END*/
+
+
+/* Mobile styles BEGIN */
+
+main {
+    justify-content: flex-start;
+}
+
 .intro {
-    padding: 10px;
-    width: 700px;
-}
-
-.intro p {
-    font-size: 18px;
-}
-
-.icons {
-    margin-top: 20px;
-    height: 80%;
-}
-
-.bx {
-    font-size: 35px;
-    color: rgb(104, 102, 102);
-    margin-right: 20px;
-    cursor: pointer;
+    margin-top: var(--intro-div-margin-top);
 }
 
 .intro h1 {
+    font-size: var(--header-text-size);
+    text-align: center;
     margin-bottom: 20px;
     background: #8F27FF;
     background: linear-gradient(to left, #8F27FF 0%, #2BA0FF 100%);
@@ -27,13 +29,45 @@
     -webkit-text-fill-color: transparent;
 }
 
-.current-page {
-    color: rgb(132, 60, 226)
+.intro p {
+    padding: 5px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.icons {
+    margin-top: 10px;
+    padding: 10px;
 }
+
+.bx {
+    font-size: var(--icon-size);
+    color: rgb(104, 102, 102);
+    margin-right: 20px;
+    cursor: pointer;
+}   
+
+
+
+/* Mobile styles END */
+
+
+/* Tablet styles BEGIN */
+
+@media only screen and (min-width: 768px) {
+    :root {
+        --intro-div-width: 800px;
+        --intro-div-margin-top: 10rem;  
+        /* --icon-size: 45px; */
+    }
+
+    .intro {
+        max-width: var(--intro-div-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .intro h1 {
+        text-align: left;
+    }
+}
+
+/* Tablet styles END */

@@ -1,0 +1,340 @@
+:root {
+    --container-width: 800px;
+}
+
+/* General Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.side-bar { /* side bar will only show on pc layout */
+    display: none;
+}
+
+body {
+    background: black;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.icon {
+    cursor: pointer;
+    height: 25px;
+}
+
+
+/* Header Styles */
+
+
+.main-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left img:last-child {
+    margin-bottom: 8px;
+}
+
+.instagram-logo {
+    height: 7rem;
+}
+
+.right .icon {
+    margin-right: 10px;
+}
+
+.stories {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    text-align: center;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.stories::-webkit-scrollbar { /* For mobile layouts the stories should have no scrollbar */
+    background: transparent;
+}
+
+.story-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(
+        45deg, 
+        #f09433 0%, 
+        #e6683c 25%, 
+        #dc2743 50%, 
+        #cc2366 75%, 
+        #bc1888 100%
+      );
+}
+
+.story-img {
+    width: 100%;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+
+/* <main> Styles */
+
+
+
+    /* Article Content Card Styles */
+    .post-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .post-heading .icon {
+        margin-right: 10px;
+        margin-top: 8px;
+    }
+    
+    .post-info {
+        margin-left: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .post-info p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .poster {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        background: linear-gradient(
+            45deg, 
+            #f09433 0%, 
+            #e6683c 25%, 
+            #dc2743 50%, 
+            #cc2366 75%, 
+            #bc1888 100%
+          );
+        padding: 3px;
+    }
+    .pfp {
+        cursor: pointer;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    /* CSS ONLY Carousel (display block by default to show)*/
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .gallery {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        max-width: 450px;
+    }
+
+   
+    .gallery::-webkit-scrollbar-button { /* hides the scrollbar buttons (done due to issues with buttons when scrolling) */
+        display: none; 
+    }
+
+    .gallery::-webkit-scrollbar {
+        height: 8px; 
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+        background-color: rgba(238, 238, 238, 0.2); 
+        border-radius: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+
+    .snap {
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .snap > * {
+        scroll-snap-align: start; /* Correct alignment */
+    }
+    
+    /* JS Carousel */
+
+    /* Social Info Styles */
+    .social-info {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .social-action, .action {
+        display: flex;
+    }
+
+    .social-action {
+        gap: 20px;
+    }
+
+    .action {
+        text-align: center;
+        gap: 10px;
+    }
+
+    .social-action .action:first-child {
+        margin-left: 20px;
+    }
+    .bookmark {
+        margin-right: 20px;
+
+    }
+
+    /* Comments Styles */
+
+    .comments {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .add-comments, .post-date {
+        color: grey;
+    }
+    
+    .add-comments {
+        font-size: 15px;
+    }
+    
+    .post-date {
+        font-size: 12px;
+    }
+    
+
+
+/* Tablet Styles*/
+@media (min-width: 768px) {
+    :root {
+        --container-width: 600px;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    header, main {
+        max-width: var(--container-width)
+    } 
+}
+
+/* PC Styles*/
+@media (min-width: 1080px) {
+    .main-heading .left, .main-heading .right {
+        display: none;
+    }
+
+    .stories {
+        margin-top: 20px;
+    }
+
+    .side-bar {
+        display: block;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .insta-logo {
+        height: 150px;
+    }
+
+    .icon-container {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+
+    .icon-container p {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+
+/* Mobile carousel styles begin */
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.track img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;    
+}
+
+
+.carousel_indicator {
+    border-radius: 50%;                
+    border: 0;                          
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4); 
+    cursor: pointer;
+    transition: background 0.3s ease;   
+}
+
+.carousel_indicator:hover {
+    background: rgba(255, 255, 255, 0.6); 
+}
+
+
+.carousel_indicator.current-slide {
+    background: rgba(255, 255, 255, 0.9); 
+}
+
+.prev, .next {
+    display: none;
+}

@@ -1,0 +1,117 @@
+/* Styling Variables BEGIN */
+:root {
+    --nav-bar-text-size: 16px;  
+    --header-text-size: 30px;
+    --main-text-size: 20px;   
+    --footer-text-size: 11px;  
+}
+
+/* Styling Variables END */
+
+/* Mobile styles BEGIN */
+* {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;  /* Ensure consistent padding/margin sizing */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* 'svh' is experimental, switching to 'vh' */
+    margin: 0;
+    background: rgb(29, 28, 28);
+}
+
+header {
+    padding: 15px 0;
+    margin-top: 20px;  /* Reduced margin for smaller screens */
+    flex: 0 1 auto;  /* Allow more flexibility in height */
+    text-align: center;
+}
+
+/* Responsive navigation styling */
+nav {
+    font-size: var(--nav-bar-text-size);  /* Mobile-friendly size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  /* Allow wrapping if screen gets too small */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;  /* Wrap items if necessary */
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease;
+    padding: 10px 15px;  /* Improve touch area for mobile */
+    display: inline-block;
+}
+
+nav a.current-page:hover {
+    color: rgb(96, 44, 163);
+}
+
+nav a:hover {
+    color: rgb(132, 60, 226);
+}
+
+.current-page {
+    color: rgb(132, 60, 226);
+}
+
+/* Main content section */
+main {
+    padding: 15px 0;
+    flex: 1;  /* Main content takes up the remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: var(--main-text-size);  /* Ensure readable text size */
+}
+
+/* Footer adjustments for mobile */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  /* Allow footer items to wrap if needed */
+    padding: 15px 0;
+    gap: 15px;  /* Reduce gap for smaller screens */
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: rgb(190, 185, 185);
+    font-size: var(--footer-text-size);
+    margin: 5px;  /* Add margin for better spacing */
+}
+
+/* Mobile styles END */
+
+
+/* Tablet styles BEGIN */
+
+@media only screen and (min-width: 768px) {
+    :root {  
+        --main-text-size: 18px;
+        --footer-text-size: 14px;  
+    }
+
+}
+
+/* Tablet styles END */

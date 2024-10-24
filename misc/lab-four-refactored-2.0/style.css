@@ -1,0 +1,178 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100svh; /* Prevents overscroll in the Y direction on mobile */
+    background: black;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow-x: hidden;
+}
+
+/* Gallery Section */ /* NOTE This section will be deleted when js in enabled js will handle styled elemnets */
+.gallery {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column; /* Layout images in a column */
+    overflow-x: auto; /* Horizontal scrolling inside the gallery */
+    overscroll-behavior: contain; /* Prevents scrolling beyond container */
+    overflow-y: hidden; /* Hide vertical overflow */
+    margin-inline: auto;
+    width: 350px;
+    gap: 10px;
+}
+
+.media-element {
+    width: 325px;
+}
+
+.media-element img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+}
+
+/* Scroll Snap Behavior */
+.snap {
+    scroll-snap-type: inline mandatory;
+}
+
+.snap > * { /* All children of snap */
+    scroll-snap-align: start;
+}
+
+/* Post Section */
+.post-info {
+    margin-top: 5px;
+}
+
+.social, .icon {
+    display: flex;
+    gap: 10px;
+}
+
+.icon p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-text {
+    margin-top: 5px;
+    display: flex;
+    gap: 15px;
+}
+
+.text {
+    font-size: 15px;
+}
+
+.date {
+    margin-top: 5px;
+    color: #A8A8A8;
+    font-size: 13px;
+}
+
+/* Header Section */
+header {
+    margin-bottom: 10px;
+}
+
+.heading {
+    margin-top: 15px;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    width: 80%;
+    font-size: 18px;
+}
+
+.user-info {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left, .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.left {
+    margin-left: 10px;
+}
+
+.right {
+    margin-right: 10px;
+}
+
+/* Profile Picture */
+.pfp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pfp img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Follow Button */
+.follow-button {
+    all: unset; /* Remove all default button styles */
+    text-align: center;
+    cursor: pointer;
+    height: 20px;
+    background: #262626;
+    padding: 10px;
+    width: 80px;
+    border-radius: 15px;
+}
+
+/* Navigation Section */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+/* Miscellaneous */
+.user-name {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+
+main {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto; /* Ensures flexible height for content */
+}
