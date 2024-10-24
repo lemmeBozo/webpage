@@ -1,3 +1,5 @@
+/* NOTE Swiping doesn't work on ios for some reason not exactly sure whats happening
+ */
 /* Starting code refactor */
 class Carousel {
     constructor(images) {
@@ -12,7 +14,7 @@ class Carousel {
         this.observer = null;
         this.interval = null;
 
-        this.setUpObserver();
+        //this.setUpObserver();
 
         this.startX = 0;
         this.currentX = 0;
@@ -116,8 +118,10 @@ class Carousel {
         // Indicator button listener
         this.indicators.forEach( (indicator, i) => {
             indicator.addEventListener("click", () => {
+                this.stopAutoPlay();
                 this.index = i;
                 this.updateCarousel();
+                setTimeout(()=>{this.startAutoPlay();},1000);   // starts up the autoplay after 1 sec
             });
         });
         
@@ -166,10 +170,10 @@ class Carousel {
         this.track.addEventListener("touchstart", (e) => {
             this.stopAutoPlay(); // upon user interaction stop autoplay
             this.startX = e.touches[0].clientX; // updates where the user started touching
-        },{ passive: false });
+        });
         this.track.addEventListener("touchmove", (e) => {
             this.currentX = e.touches[0].clientX; // update the current touch position
-        },{ passive: false });
+        });
         this.track.addEventListener("touchend", () => {
             const diffX = this.startX - this.currentX;
             if (Math.abs(diffX) > 50) { // if minimum swipe threshold is reached then move (50px)
@@ -182,8 +186,9 @@ class Carousel {
                 }
                 this.updateCarousel();
             }
-        },{ passive: false });
+        });
     } 
+    
 }
 
 

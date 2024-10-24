@@ -295,10 +295,12 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    touch-action: pan-y;
 }
 
 .track {
+    position: relative;
+    z-index: 10;
+    touch-action: auto;
     display: flex;
     transition: transform 0.5s ease;
 }
