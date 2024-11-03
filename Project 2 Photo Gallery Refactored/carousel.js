@@ -14,7 +14,7 @@ class Carousel {
         this.observer = null;
         this.interval = null;
 
-        //this.setUpObserver();
+        this.setUpObserver();
 
         this.startX = 0;
         this.currentX = 0;
