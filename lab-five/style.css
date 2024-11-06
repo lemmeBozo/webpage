@@ -2,8 +2,14 @@
     font-family: Arial, Helvetica, sans-serif
 }
 
-body {
-    background: #1D1C1C;
+h1 {
+    text-align: center;
+}
+
+.part-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .media-container {
