@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Audio and Video</title>
+</head>
+<body>
+    <!-- 
+        These element will have default display of none 
+        will only be activated by JS 
+     -->
+    <div class="thresholds"id="0-Quarters">
+        <h1>START</h1>
+    </div>  
+    <div class="thresholds" id="1-Quarter">
+        <h1>EARLY</h1>
+    </div>  
+    <div class="thresholds" id="2-Quarters">
+        <h1>MIDWAY</h1>
+    </div>  
+    <div class="thresholds" id="3-Quarters">
+        <h1>LATE</h1>
+    </div>  
+    <div class="thresholds" id="4-Quarters">
+        <h1>END</h1>
+    </div>
+
+    <audio class="audio-player"></audio>
+    <div class="container">
+        <div class="playlist-container">
+            <!-- Header Row -->
+            <div class="playlist-header">
+                <div>#</div>
+                <div>Title</div>
+                <div>Album</div>
+                <div>Date Added</div>
+                <div>Duration</div>
+            </div>
+        
+            <!-- Song Rows -->
+            <div class="song-row">
+                <div>1</div>
+                <div class="song-title">Borderline</div>
+                <div>The Slow Rush</div>
+                <div>Aug 2, 2024</div>
+                <div>3:57</div>
+            </div>
+            <div class="song-row">
+                <div>2</div>
+                <div class="song-title">Kaleidoscope</div>
+                <div>Kaleidoscope</div>
+                <div>Oct 18, 2024</div>
+                <div>3:16</div>
+            </div>
+            <div class="song-row">
+                <div>3</div>
+                <div class="song-title">OUTTA MY MIND</div>
+                <div>Monsune</div>
+                <div>Oct 5, 2024</div>
+                <div>3:46</div>
+            </div>
+        </div>
+        <div class="lyrics">
+            <p class="lyricsP">Lyrics go here</p>
+        </div>        
+    </div>
+
+
+
+
+    <!-- consider having a litte div that displays what is current playing -->
+    <div id="audio-controls">
+        <input type="range" min="0" max="100" value="0" id="music-slider">     
+        <p class="song-time">Time goes here</p>
+        <div id="button-container">
+            <button id="shuffle">Shuffle</button>
+            <button id="previous">Previous</button>
+            <button id="play">Play</button>
+            <button id="next">Next</button>      
+            <button id="repeat">Repeat</button>           
+        </div>
+    </div>
+           
+
+    <script src="script.js"></script>
+</body>
+</html>
