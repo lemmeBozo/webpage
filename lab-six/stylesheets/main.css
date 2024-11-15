@@ -1,0 +1,45 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6; /* Adds height to the lines */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#container {
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtled shadow to make card more defined */
+}
+
+.house-list {
+    margin-top: 20px;
+}
+
+.house-list dt {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.house-list dd {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-style: italic;
+    color: #555;
+}
+
