@@ -1,0 +1,22 @@
+/* All subsequent designs are mobile first  */
+/* Page specific styles */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 500px;
+    padding: 1.2em;
+}
+
+.intro h2 {
+    font-size: var(--header-text-size);
+    text-align: center;
+    margin-bottom: 20px;
+    background: #8F27FF;
+    background: linear-gradient(to left, #8F27FF 0%, #2BA0FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+

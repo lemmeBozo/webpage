@@ -1,0 +1,75 @@
+/* All subsequent designs are mobile first */
+/* Global styles for all pages */
+
+:root {
+    --nav-bar-text-size: 16px;  
+    --header-text-size: 30px;
+    --main-text-size: 20px;   
+    --footer-text-size: 11px;  
+}
+
+* {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: rgb(29, 28, 28);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+
+}
+
+nav {
+
+    padding: 1.2em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.current-page {
+    color: rgb(132, 60, 226);
+}
+
+main {
+    font-size: var(--main-text-size);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer p {
+    color: rgb(190, 185, 185);
+    font-size: var(--footer-text-size);
+    margin: 5px;  /* Add margin for better spacing */
+}
+
+/* 
+nav a.current-page:hover {
+    opacity: 0.8;
+}
+
+nav a:hover {
+    color: rgb(132, 60, 226);
+} */
